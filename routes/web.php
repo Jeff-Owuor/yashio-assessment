@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/createCategory', function () {
+    return view('categoryForm');
+});
+Route::get('/products',[ProductController::class,'allProducts']);
+Route::post("/addCategory",[CategoryController::class,'store'])->name('form.submit');
