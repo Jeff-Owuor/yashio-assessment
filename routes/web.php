@@ -14,11 +14,11 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[CategoryController::class,'allCategories']);
 Route::get('/createCategory', function () {
     return view('categoryForm');
 });
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::get('/products',[ProductController::class,'allProducts']);
 Route::post("/addCategory",[CategoryController::class,'store'])->name('form.submit');
+Route::post("/addProduct",[ProductController::class,'store'])->name('addProduct.submit');
