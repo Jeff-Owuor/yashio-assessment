@@ -3,6 +3,11 @@
 @section("content")
 
 <div class="container">
+@if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <h1>Categories</h1>
     <a href="{{url ('/createCategory')}}">
         <span class="material-symbols-outlined">

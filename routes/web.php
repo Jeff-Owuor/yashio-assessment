@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,7 @@ Route::get('/product/create', [ProductController::class, 'create'])->name('produ
 Route::get('/products',[ProductController::class,'allProducts']);
 Route::post("/addCategory",[CategoryController::class,'store'])->name('form.submit');
 Route::post("/addProduct",[ProductController::class,'store'])->name('addProduct.submit');
+Route::get("/category/{id}",function(){
+    $category = Category::find($id);
+    return view('singleCategory',compact('category'));
+});
