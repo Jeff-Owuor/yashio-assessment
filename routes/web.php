@@ -23,7 +23,4 @@ Route::get('/product/create', [ProductController::class, 'create'])->name('produ
 Route::get('/products',[ProductController::class,'allProducts']);
 Route::post("/addCategory",[CategoryController::class,'store'])->name('form.submit');
 Route::post("/addProduct",[ProductController::class,'store'])->name('addProduct.submit');
-Route::get("/category/{id}",function(){
-    $category = Category::find($id);
-    return view('singleCategory',compact('category'));
-});
+Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
