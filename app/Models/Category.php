@@ -13,7 +13,7 @@ class Category extends Model
    public function products() : HasMany
    {
 
-    return this->hasMany(Product::class);
+    return $this->hasMany(Product::class,'category_id');
    }
 
     use HasFactory;
