@@ -13,7 +13,13 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('welcome',["categories"=>$category]);
     }
-
+    public function show($id)
+    {
+        // Fetch the parent model with its children
+        $category = Category::find($id);
+        $products = $category->products;
+        return view('singleCategory', compact('category','products'));
+    }
     public function store(Request $request)
     {
         // validate the incoming data
