@@ -5,13 +5,12 @@
 
 <div class="container">
 <h1 class="text-center">Add product</h1>
-
-
-
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-7">
 <form method="post" action="{{ route('addProduct.submit') }}">
     @csrf
   <fieldset>
-    <legend>Disabled fieldset example</legend>
     <div class="mb-3">
         <label for="name">
             Name:
@@ -35,8 +34,8 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>
-
-
+</div>
+</div>
 
 
 
