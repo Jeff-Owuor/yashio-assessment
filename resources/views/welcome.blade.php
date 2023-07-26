@@ -23,7 +23,10 @@ add
   </div> -->
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>{{$category->name}}</p>
+     <a href="{{ route('category.show', ['id' => $category->id]) }}">
+       <p>{{$category->name}}</p>
+     
+    </a>
     </blockquote>
   </div>
 </div>
