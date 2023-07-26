@@ -1,9 +1,16 @@
 @extends("layout")
 
 @section("content")
-       <div class="container">
-            <h1>Item Details</h1>
-            <p>Name: {{ $category->name }}</p>
-            <p>Description: {{ $item->description }}</p>
-       </div>
+<h1>Category Details</h1>
+    <p>Category Name: {{ $category->name }}</p>
+
+    <h2>Children:</h2>
+    <ul>
+        @foreach ($products as $product)
+            <li>
+                <p>Product Name: {{ $product->name }}</p>
+                <p>Price: {{ $product->price }}</p>
+            </li>
+        @endforeach
+    </ul>
 @endsection
