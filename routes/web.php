@@ -24,3 +24,5 @@ Route::get('/products',[ProductController::class,'allProducts']);
 Route::post("/addCategory",[CategoryController::class,'store'])->name('form.submit');
 Route::post("/addProduct",[ProductController::class,'store'])->name('addProduct.submit');
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+Route::put('/categoryUpdate/{id}',[CategoryController::class,'updateCategory'])->name('category.update');
+Route::get('/edit/{id}',[CategoryController::class,'edit']);
