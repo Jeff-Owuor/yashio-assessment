@@ -22,7 +22,7 @@ add
     Quote
   </div> -->
   <div class="card-body">
-    <blockquote class="blockquote mb-0">
+    <blockquote class="blockquote mb-0  d-flex flex-row  justify-content-between">
      <a href="{{ route('category.show', ['id' => $category->id]) }}">
        <p>{{$category->name}}</p>
      
