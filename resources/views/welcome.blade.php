@@ -27,11 +27,11 @@ add
        <p>{{$category->name}}</p>
      
     </a>
-    <a href="{{url('edit/'.$category->id)}}">
-    <span class="material-symbols-outlined">
-        edit
-    </span>
-    </a>
+        <a href="{{url('edit/'.$category->id)}}">
+        <span class="material-symbols-outlined">
+            edit
+        </span>
+        </a>
     </blockquote>
   </div>
 </div>

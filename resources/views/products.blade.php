@@ -20,6 +20,11 @@ add
       <p>{{$product->name}}</p>
       <p>{{$product->price}}</p>
     </blockquote>
+    <form action="{{url('/productDelete/'.$product->id)}}" style="margin-left:4px;" method="post">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">Delete </button>
+       </form>
   </div>
 </div>
 </div>
