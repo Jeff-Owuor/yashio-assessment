@@ -36,12 +36,28 @@ class ProductController extends Controller
   
           $product->save();
   
-          return redirect()->to('/')->with('success', 'Product created successfully!');
+          return redirect()->to('/products')->with('success', 'Product created successfully!');
     }
     public function deleteProduct($id)
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect()->to('/products') ->with("success","Product deleted Successfully!");
+        return redirect()->to('/products') ->with("delete","Product deleted Successfully!");
+    }
+    public function editProduct($id)
+    {
+        $product = Product::find($id);
+        return view('updateProductForm',compact('product','id'));
+    }
+    public function updateProduct(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $validatedData = $request->validate([
+             'name'=>'required | string| max:100',
+             'price'=>'required | max:50 ',
+        ]);
+        $product->name = $validatedData['name'];
+        $product->price = $validatedData['price'];
+        return redirect()->to('/products') ->with("success","Product updated Successfully!");
     }
 }
