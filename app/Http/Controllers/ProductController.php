@@ -38,4 +38,10 @@ class ProductController extends Controller
   
           return redirect()->to('/')->with('success', 'Product created successfully!');
     }
+    public function deleteProduct($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->to('/products') ->with("success","Product deleted Successfully!");
+    }
 }
