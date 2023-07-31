@@ -35,7 +35,7 @@ add
             edit
         </span>
         </a>
-    <form action="{{url('/productDelete/'.$product->id)}}" style="margin-left:4px;" method="post">
+      <form action="{{url('/productDelete/'.$product->id)}}" style="margin-left:34px;display:inline-block" method="post">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger">Delete </button>
