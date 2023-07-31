@@ -2,6 +2,16 @@
 
 @section("content")
   <div class="container">
+  @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session('delete'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('delete') }}
+        </div>
+    @endif
     <h1>All Products</h1>
     <a href="{{url ('/product/create')}}">
         <span class="material-symbols-outlined">
@@ -20,6 +30,11 @@ add
       <p>{{$product->name}}</p>
       <p>{{$product->price}}</p>
     </blockquote>
+    <a href="{{url('editProduct/'.$product->id)}}">
+        <span class="material-symbols-outlined">
+            edit
+        </span>
+        </a>
     <form action="{{url('/productDelete/'.$product->id)}}" style="margin-left:4px;" method="post">
               @csrf
               @method('DELETE')
