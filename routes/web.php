@@ -26,3 +26,4 @@ Route::post("/addProduct",[ProductController::class,'store'])->name('addProduct.
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 Route::put('/categoryUpdate/{id}',[CategoryController::class,'updateCategory'])->name('category.update');
 Route::get('/edit/{id}',[CategoryController::class,'edit']);
+Route::delete('/productDelete/{id}',[ProductController::class,'deleteProduct'])->name('product.delete');
